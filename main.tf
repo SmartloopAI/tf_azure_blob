@@ -4,12 +4,6 @@ locals {
   }
 }
 
-resource "random_pet" "rg" {
-  keepers = {
-    resource_group_name = data.azurerm_resource_group.this.name
-  }
-}
-
 resource "azurerm_storage_account" "static_storage" {
   name                     = var.resource_name
   resource_group_name      = data.azurerm_resource_group.this.name
