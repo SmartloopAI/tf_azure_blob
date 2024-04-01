@@ -5,7 +5,7 @@ locals {
 }
 
 resource "azurerm_storage_account" "static_storage" {
-  name                     = var.resource_name
+  name                     = "${var.resource_name}${var.storage_account_name}"
   resource_group_name      = data.azurerm_resource_group.this.name
   location                 = data.azurerm_resource_group.this.location
   account_kind             = "StorageV2"
